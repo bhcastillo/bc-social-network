@@ -1,0 +1,21 @@
+<h1>News</h1>
+<hr>
+<h2 *ngIf="stories.length<1;else templateStories"> No Stories</h2>
+<ng-template #templateStories>
+<cdk-virtual-scroll-viewport class="list-container " itemSize="50">
+  <div class="row ">
+    <div class="col-md-4 p-4 " *cdkVirtualFor="let story of stories">
+        <div class="card card-photo pointer " (click)="selectedCard(story._id)">
+          <div class="card-header ">
+            <h2>{{ story.title }}</h2>
+            <p>@{{story.username}}</p>
+          </div>
+          <img *ngIf="story.imagePath" [src]="story.imagePath | imagePhoto" class="img-card-top w-100">
+          <div class="card-body  ">
+            {{ story.description }}
+          </div>
+        </div>
+      </div>
+  </div>
+</cdk-virtual-scroll-viewport>
+</ng-template>
