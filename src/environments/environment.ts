@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  URI:"https://api-bc-social-network.herokuapp.com"
+  URI: 'https://api-bc-social-network.herokuapp.com',
+  clientId: 'fN7gDzYh6Q53jAeoxCUVmJ7WXqUmdmmL',
+  domain: 'bhcastillo.us.auth0.com',
 };
 
 /*
